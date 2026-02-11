@@ -7,9 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #6b7b6e; /* くすんだドライフラワーの葉の色 */
-            --accent-color: #d4d9d4;
-            --bg-color: #fdfdfb; /* 柔らかな生成り色 */
+            --primary-color: #6b7b6e; /* ドライフラワー風セージグリーン */
+            --bg-color: #fdfdfb; 
             --text-color: #4a524d;
         }
 
@@ -17,112 +16,110 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 2.0;
+            line-height: 2.1;
             margin: 0;
             padding: 0;
             position: relative;
         }
 
-        /* 左右に配置するドライフラワー風の装飾（CSSのみで描写） */
+        /* 左右のドライフラワー装飾 */
         body::before, body::after {
             content: '🌿';
             position: fixed;
-            font-size: 150px;
-            opacity: 0.05; /* 限りなく薄く、影のように */
+            font-size: 140px;
+            opacity: 0.04; 
             z-index: -1;
-            filter: grayscale(0.5);
         }
-        body::before { top: -20px; left: -30px; transform: rotate(-20deg); }
-        body::after { bottom: -20px; right: -30px; transform: rotate(160deg); }
+        body::before { top: -20px; left: -30px; transform: rotate(-25deg); }
+        body::after { bottom: -20px; right: -30px; transform: rotate(155deg); }
 
         .container {
             max-width: 680px;
             margin: 40px auto;
-            padding: 60px 40px;
+            padding: 60px 35px;
             background: rgba(255, 255, 255, 0.7);
-            border-radius: 4px; /* あえてカチッとさせて清潔感を */
         }
 
         header { text-align: center; margin-bottom: 60px; }
 
         h1 {
-            font-size: 1.6rem;
-            font-weight: 400; /* 細めで上品に */
-            letter-spacing: 0.1rem;
+            font-size: 1.55rem;
+            font-weight: 400;
+            letter-spacing: 0.08rem;
             color: var(--primary-color);
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
         .hero-box {
             border-top: 1px solid #e0e0e0;
             border-bottom: 1px solid #e0e0e0;
-            padding: 40px 0;
-            margin: 40px 0;
+            padding: 45px 0;
+            margin: 45px 0;
             text-align: center;
             font-size: 1.05rem;
             color: #5a635d;
         }
 
-        h2 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin-top: 60px;
+        .highlight {
+            background: linear-gradient(transparent 80%, #e0e6e2 80%);
             font-weight: 700;
         }
 
-        .highlight {
-            background: linear-gradient(transparent 80%, #e0e6e2 80%);
-        }
-
-        /* 3つの救急箱をさらっと見せる */
-        .card-list {
-            margin: 40px 0;
+        .list-style {
+            margin: 30px 0;
             padding: 0;
             list-style: none;
         }
-        .card-item {
-            padding: 15px 0;
-            border-bottom: 1px dotted #ccc;
+        .list-item {
+            padding: 12px 0;
+            border-bottom: 1px dotted #dcdcdc;
             display: flex;
             align-items: baseline;
         }
-        .card-item::before { content: '・'; margin-right: 10px; color: var(--primary-color); }
+        .list-item::before { content: '✔'; margin-right: 12px; color: var(--primary-color); font-size: 0.9rem; }
 
-        /* きらりと光るボタン */
         .btn-wrapper { text-align: center; margin-top: 80px; }
         
         .cta-button {
             position: relative;
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
-            padding: 22px 60px;
+            color: white !important;
+            padding: 22px 55px;
             border-radius: 2px;
             text-decoration: none;
             font-weight: 700;
-            letter-spacing: 0.1rem;
-            overflow: hidden; /* 光がはみ出ないように */
+            letter-spacing: 0.15rem;
+            overflow: hidden;
             transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
-        /* 光の帯のアニメーション */
         .cta-button::after {
             content: '';
             position: absolute;
             top: -50%;
             left: -60%;
-            width: 20%;
+            width: 25%;
             height: 200%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.25);
             transform: rotate(30deg);
-            transition: none;
             animation: shine 4s infinite;
         }
 
         @keyframes shine {
             0% { left: -60%; }
-            20% { left: 120%; }
+            15% { left: 120%; }
             100% { left: 120%; }
         }
 
@@ -131,13 +128,13 @@
             font-size: 0.75rem;
             color: #999;
             text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 30px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 35px;
         }
 
         @media (max-width: 600px) {
             .container { padding: 40px 20px; }
-            h1 { font-size: 1.3rem; }
+            h1 { font-size: 1.35rem; }
         }
     </style>
 </head>
@@ -149,31 +146,48 @@
 
         <p>「扶養の枠、青色申告、freee……。<br>
         やりたいことは『事業』なのに、目の前にあるのは『事務』の山。<br>
-        最初の頃ほど、一人で進めるのが孤独。<br>
-        <span class="highlight">そんな一人で溜め息をつく夜を、ここで終わりにしましょう。</span>」</p>
+        最初の頃ほど、一人で進めるのが、<span class="highlight">どうしようもなく孤独に感じてしまうこと、ありませんか？</span><br>
+        そんな一人で溜め息をつく夜を、ここで終わりにしましょう。」</p>
 
         <div class="hero-box">
-            2,500円の利益でソフトを導入するのは、わがままではありません。<br>
-            事務作業に奪われていたその1時間を、<br>
-            子供と手を繋いで公園に行く時間に変えるための投資です。
+            「ソフト代に月3,000円（月払いの場合）もかけるなんて……」<br>
+            そう思うかもしれません。でも、それはわがままではありません。<br>
+            <span class="highlight">家族と一緒に、心から笑ってお出かけする時間</span><br>
+            に変えるための、自分への投資です。
         </div>
 
-        <h2>お届けする3つの救急箱</h2>
-        <ul class="card-list">
-            <li class="card-item">確定申告ラストスパート・ガイド</li>
-            <li class="card-item">【秘策】「まずは無料で」派のための、賢い転記術（弥生・freee）</li>
-            <li class="card-item">定期的に数字を整える、みんなの「入力会」</li>
+        <h2>あおいの「自計化はじめの部屋」でお届けすること</h2>
+        <ul class="list-style">
+            <li class="list-item">日々の記帳のルールを覚えながら習慣化する（freee対応）</li>
+            <li class="list-item">会計ソフトの使い方を覚えて実践する</li>
+            <li class="list-item">税制改正と抑えるポイントをいち早くシェア</li>
+            <li class="list-item">確定申告の時期に「あ、もう終わってる」と余裕を持てる自分へ</li>
+        </ul>
+
+        <h2>2026年 確定申告ラストスパート特別メニュー</h2>
+        <p>残り１ヶ月となった確定申告に合わせて、以下の内容をお届けします。</p>
+        <ul class="list-style">
+            <li class="list-item">確定申告ラストスパート・ガイド（動画とコラムで解説）</li>
+            <li class="list-item">【秘策】「まずは無料で」派のための、賢いfreee活用術</li>
+            <li class="list-item">定期的に数字を整える、みんなの「入力会」</li>
         </ul>
 
         <p>私は元銀行系経理ですが、副業当初はめちゃくちゃ迷走しました。<br>
-        だからこそ、あなたの「これで大丈夫？」が痛いほどわかります。</p>
+        だからこそ、あなたの「記帳が不安」「最初の確定申告、これで大丈夫？」が痛いほどわかります。</p>
+        
+        <p>3ヶ月後、半年後。<br>
+        「自分で経理を進めて、必要があれば税理士に頼める判断ができる」<br>
+        そんな自信を持ったあなたに、会いに行きませんか？</p>
 
         <div class="btn-wrapper">
+            <p style="margin-bottom: 25px; font-weight: 700;">「枠を守る」私から、「枠を使いこなして稼ぐ」私へ。</p>
             <a href="https://note.com/aoi_accounting" class="cta-button">扉を開けて、お待ちしています</a>
         </div>
 
         <footer>
-            誠実なお約束：私は税理士ではありません。個別の節税アドバイスはできませんが、あなたが「専門家を使いこなせるオーナー」になれるよう全力で伴走します。
+            誠実なお約束：本サービスは「freee会計」の利用を前提としています。<br>
+            節税メリットの大きい「青色申告」をスムーズに完結させることが私たちのゴールです。<br>
+            「いつかは……」と思っているなら、今この瞬間から一番効率的なレールを一緒に走りましょう。
         </footer>
     </div>
 </body>
