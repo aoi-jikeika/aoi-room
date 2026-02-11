@@ -3,212 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【シミュレーター公開記念】数字の不安を「家族の笑顔」に変える。元経理ママが伴走する「自計化」の救急箱🌿</title>
-    <meta name="description" content="元銀行系経理のあおいが、パート×副業ママのために「130万円の崖」を消し、家族との時間を守る自計化戦略を伴走サポート。">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <title>数字の不安を「家族の笑顔」に変える。元経理ママが伴走する自計化の救急箱🌿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* 基本スタイル */
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.8;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f8fcf8; /* 少しグリーンがかったオフホワイト */
-            overflow-x: hidden;
-            position: relative;
+        :root {
+            --primary-color: #5a8a70;
+            --accent-color: #a3c9a8;
+            --bg-color: #f9fbf9;
+            --text-color: #3e4a42;
         }
 
-        /* 背景の葉っぱ（簡易的な表現） */
-        body::before {
-            content: '';
-            position: absolute;
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 2.0;
+            margin: 0;
+            padding: 0;
+            word-break: break-all;
+        }
+
+        /* 繊細な葉っぱの背景装飾 */
+        .leaf-bg {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="leaf-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 0 L20 10 L10 20 L0 10 Z" fill="#e0f2e0" opacity="0.6"/><path d="M10 0 L20 10 L10 20 L0 10 Z" fill="#d4eed4" opacity="0.3" transform="rotate(45 10 10)"/></pattern></defs><rect width="100" height="100" fill="url(%23leaf-pattern)"/></svg>');
-            background-size: 80px 80px; /* 葉っぱのサイズ調整 */
-            opacity: 0.3; /* 背景の透明度 */
             z-index: -1;
+            background-image: radial-gradient(circle at 10% 10%, rgba(163, 201, 168, 0.12) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 90%, rgba(90, 138, 112, 0.08) 0%, transparent 30%);
+            opacity: 0.7;
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            position: relative;
-            z-index: 1;
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+            border: 1px solid rgba(163, 201, 168, 0.2);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .sub-title {
+            font-size: 0.85rem;
+            letter-spacing: 0.15rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+            opacity: 0.8;
         }
 
         h1 {
-            font-size: 2.2em;
-            color: #2e8b57; /* シーグリーン */
-            text-align: center;
-            margin-bottom: 30px;
+            font-size: 1.7rem;
             font-weight: 700;
+            line-height: 1.6;
+            color: var(--primary-color);
+            margin: 0;
         }
 
         h2 {
-            font-size: 1.6em;
-            color: #3cb371; /* ミディアムシーグリーン */
-            border-bottom: 2px solid #e0f2e0;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 18px;
+            margin-top: 60px;
+            margin-bottom: 30px;
         }
 
-        p {
-            margin-bottom: 1em;
+        .hero-box {
+            background: #f1f6f3;
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 5px solid var(--primary-color);
+            font-size: 1.05rem;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
+        .highlight {
+            background: linear-gradient(transparent 70%, #dcebe0 70%);
+            font-weight: 700;
         }
 
-        ul li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 12px;
+        .card {
+            border: 1px solid #e8edea;
+            padding: 28px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            background: #fff;
         }
 
-        ul li::before {
-            content: '🌿'; /* 葉っぱのアイコン */
-            position: absolute;
-            left: 0;
-            color: #2e8b57;
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
 
-        .button {
+        .card-title {
+            font-weight: 700;
+            color: var(--primary-color);
             display: block;
-            width: fit-content;
-            margin: 40px auto;
-            padding: 15px 30px;
-            background-color: #2e8b57;
-            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .btn-wrapper {
             text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            background: #f9fbf9;
+            border-radius: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 60px;
+            border-radius: 60px;
             text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1em;
             font-weight: 700;
-            transition: background-color 0.3s ease;
+            font-size: 1.15rem;
+            box-shadow: 0 8px 25px rgba(90, 138, 112, 0.25);
+            transition: all 0.3s;
         }
 
-        .button:hover {
-            background-color: #3cb371;
+        .cta-button:hover {
+            background-color: #4a755d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(90, 138, 112, 0.35);
         }
 
-        .strong-text {
-            color: #2e8b57;
-            font-weight: 700;
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.7;
         }
 
-        /* アイコンの配置 (簡易的な表現) */
-        .icon-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            overflow: hidden; /* コンテナからはみ出すアイコンを非表示に */
-        }
-        .icon {
-            position: absolute;
-            font-size: 2em;
-            opacity: 0.4;
-            color: #8fbc8f; /* 薄い緑色 */
-        }
-        .icon.calc { top: 15%; left: 8%; }
-        .icon.graph { top: 5%; right: 10%; }
-        .icon.receipt { bottom: 10%; left: 5%; }
-        .icon.coin { bottom: 20%; right: 8%; }
-        .icon.tax { top: 30%; right: 5%; }
-
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.4em;
-            }
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
-            .icon {
-                font-size: 1.5em; /* スマホではアイコンを少し小さく */
-            }
+        @media (max-width: 600px) {
+            .container { margin: 15px; padding: 30px 20px; }
+            h1 { font-size: 1.35rem; }
+            h2 { font-size: 1.15rem; }
+            .hero-box { padding: 25px; font-size: 0.95rem; }
         }
     </style>
 </head>
 <body>
-    <div class="icon-container">
-        <span class="icon calc">🔢</span> <span class="icon graph">📈</span> <span class="icon receipt">🧾</span> <span class="icon coin">💰</span> <span class="icon tax">📄</span> <span class="icon calc" style="top: 70%; left: 70%;">🔢</span>
-        <span class="icon graph" style="top: 85%; left: 20%;">📈</span>
-        <span class="icon receipt" style="top: 40%; left: 90%;">🧾</span>
-        <span class="icon coin" style="top: 60%; left: 30%;">💰</span>
-    </div>
-
+    <div class="leaf-bg"></div>
     <div class="container">
-        <h1>【シミュレーター公開記念】数字の不安を「家族の笑顔」に変える。<br>元経理ママが伴走する「自計化」の救急箱🌿</h1>
+        <header>
+            <span class="sub-title">【シミュレーター公開記念】</span>
+            <h1>数字の不安を「家族の笑顔」に変える。<br>元経理ママが伴走する「自計化」の救急箱🌿</h1>
+        </header>
 
-        <h2>1. 導入：シミュレーターを動かしてみたあなたへ</h2>
-        <p>シミュレーターの結果はいかがでしたか？</p>
-        <p>「意外と手残りが少ないな……」とため息をついた方も、 「『おめでとう！』って出たけど、本当に大丈夫かな？」とドキドキした方も、 まずは、自分の数字と向き合った自分を、たくさん褒めてあげてください。</p>
-        <p>私がこのツールを無料で全開放したのは、かつての私と同じように<strong class="strong-text">「いくら稼げばいいのか分からない」「扶養が怖くてブレーキを踏んでしまう」</strong>という不安で立ち止まる時間を、一人でも多くのママに手放してほしかったからです。</p>
-        <p>数字を知ることは、怖がることではありません。<strong class="strong-text">「好きな時に、値段を気にせず子供にフルーツを買ってあげられる」</strong><strong class="strong-text">「家族旅行で、心から『楽しいね！』と笑い合える」</strong></p>
-        <p>そんな小さな、でも大切な「自由」を手に入れるための、最初の一歩なんです🌿</p>
+        <section>
+            <h2>1. 稼ぐほど、不安が増えていませんか？</h2>
+            <p>シミュレーターの結果はいかがでしたか？<br>今の自分の立ち位置を知ってワクワクした方も、逆に焦りを感じた方もいるかもしれません。</p>
+            
+            <div class="hero-box">
+                「扶養の枠、青色申告、freee……。<br>
+                やりたいことは『事業』なのに、目の前にあるのは『事務』の山。<br>
+                最初の頃ほど、一人で進めるのが孤独。<br>
+                <span class="highlight">そんな一人で溜め息をつく夜を、ここで終わりにしましょう。</span>」
+            </div>
 
-        <h2>2. なぜ「ツール」だけでは終われないのか？</h2>
-        <p>シミュレーターで見えたのは、あくまで「理想の地図」です。 でも、その地図を持って実際に歩き始めると、また別の不安が出てきます。</p>
-        <ul>
-            <li>「freeeの初期設定、これで合ってる？」</li>
-            <li>「このレシート、経費にしていいのかな……」</li>
-            <li>「確定申告の画面、専門用語ばかりで閉じたくなる」</li>
-        </ul>
-        <p>せっかくの「黄金バランス」も、正しく記帳（自計化）できなければ、最後には「税金のパニック」という形で崩れてしまいます。</p>
-        <p>だから、私はこの場所を作りました。<strong class="strong-text">「数字を予測する場所」がシミュレーターなら、 「数字を、確実に通帳に残るお金に変える場所」が、このメンバーシップです。</strong></p>
+            <p>数字を知ることは、怖がることではありません。<br>それは、<strong class="highlight">「好きな時に、値段を気にせず子供にフルーツを買ってあげられる自由」</strong>を手に入れるための、最初の一歩なんです。</p>
+        </section>
 
-        <p><strong class="strong-text">2,500円の利益でソフトを入れるのは、わがままではありません。</strong></p>
-        <p>初めて副業で2,500円の利益が出たとき。<br>「これで美味しいケーキでも買って、家族に還元しなきゃ」と焦るかもしれません。<br>でも、その2,500円を会計ソフトという「自分の右腕」に投資することは、家族を後回しにすることではありません。</p>
-        <p><strong class="strong-text">事務作業に奪われていたその1時間を、子供と手を繋いで公園に行く時間に変える。</strong></p>
-        <p>それこそが、私たちが自計化を身につける本当の理由です。<br>数字を整えることは、あなたの「大切な時間」を取り戻すための、一番確実な方法なんです🌿</p>
+        <section>
+            <h2>2. なぜ「月2,500円の利益」で、即ソフトを導入すべきなのか？</h2>
+            <p>その2,500円を会計ソフトという「自分の右腕」に投資することは、わがままではありません。<br>事務作業に奪われていたその1時間を、子供と手を繋いで公園に行く時間に変える。</p>
+            <p>それこそが、私たちが自計化を身につける本当の理由です。<br>数字を整えることは、あなたの「大切な時間」を取り戻すための、一番確実な方法なんです。</p>
+        </section>
 
+        <section>
+            <h2>3. 数字を確実に「通帳に残るお金」に変える場所</h2>
+            <p>一人だと後回しにしてしまう「数字の整理」を、みんなで進める3つの救急箱を用意しました。</p>
 
-        <h2>3. あおいのメンバーシップ「3つの救急箱」</h2>
-        <p>今のあなたに必要なものだけを、ぎゅっと詰め込みました。</p>
-        <h3>①【最速】確定申告ラストスパート・ガイド</h3>
-        <p>「これだけやれば、ひとまず今夜は眠れる」という、初心者向けの操作ステップを動画とコラムで解説します。<br>（※freeeを中心に、ご要望に合わせて弥生などの解説もアップデート予定！）</p>
-        <p><small>※操作そのものはご自身で行っていただきますが、「どこをどう押せばいいか」の迷いをゼロにします。</small></p>
+            <div class="card">
+                <span class="card-title">①【最速】確定申告ラストスパート・ガイド</span>
+                初心者さんが迷いやすい「freee」の操作ステップを動画とコラムで最短ルート解説。
+            </div>
 
-        <h3>②【秘策】「まずは無料で」派のための、賢い転記術</h3>
-        <p>「2026年の申告はコストをかけずに乗り切りたい！」という方へ。 freeeの無料枠を賢く使って下書きを作り、手書きで正しく転記する<strong class="strong-text">「自力で乗り切る裏技」</strong>を伝授します。 今年を「練習」にし、2027年からはプロのようにサクッと終わらせる力を一緒に蓄えましょう。</p>
+            <div class="card">
+                <span class="card-title">②【秘策】「まずは無料で」派のための、賢い転記術</span>
+                今年はコストをかけたくない方へ。freeeの無料枠（または弥生）を賢く使って乗り切る「自力での裏技」を伝授。
+            </div>
 
-        <h3>③【安心】自計化・振り返りの時間</h3>
-        <p>一人だと後回しにしてしまう数字の整理を、みんなで進めるワーク会を計画しています。<br>（※私の家庭状況や、皆さんの進み具合に合わせて柔軟に開催させていただきます🌿）</p>
+            <div class="card">
+                <span class="card-title">③【安心】自計化・振り返りの時間</span>
+                定期的に数字を整える<span class="highlight">入力会</span>。一人じゃないから、後回しにしない習慣が身につきます。
+            </div>
+        </section>
 
-        <h2>4. 最後に：最初は専門知識なんて、いりません</h2>
-        <p>「私なんかが入っても大丈夫かな……」 「丸投げしたいわけじゃないけど、難しそう……」</p>
-        <p>大丈夫です。最初はみんな初心者です。 私も、青色申告の本を片手に「これ、どういう意味？」と首を傾げるところからスタートしました。</p>
-        <p>ここは、私に「丸投げ」する場所ではなく、<strong class="strong-text">私が手渡す「救急箱（知恵）」を使って、あなたが少しずつ自立していく場所</strong>です。</p>
-        <p>3ヶ月後、半年後。 「あんなに怖かった確定申告が、今は自分でコントロールできている」 そんな自信を持ったあなたに、出会いに行きませんか？</p>
-        <p><strong class="strong-text">「枠を守る人」から、「枠を使いこなして稼ぐ人」へ。</strong> 扉を開けて、お待ちしています🌿</p>
+        <section>
+            <h2>4. 隣で一緒に悩む。それが私のスタイルです。</h2>
+            <p>私は元銀行系経理ですが、副業を始めた当初は、皆さんと同じようにめちゃくちゃ迷走しました。<br>だからこそ、「これで大丈夫？」と不安になるあなたの気持ちが、痛いほどわかるんです。</p>
+            <p>ここは、私に「丸投げ」する場所ではなく、私が手渡す「知恵」を使って、あなたが少しずつ自立していく場所。</p>
+            <p>3ヶ月後。<br>「あんなに怖かった数字が、今は自分でコントロールできている」<br>そんな自信を持ったあなたに、会いに行きませんか？</p>
+        </section>
 
-        <a href="[メンバーシップへの登録URLをここに挿入]" class="button">メンバーシップに参加して、家族との時間を守る</a>
+        <div class="btn-wrapper">
+            <p style="margin-bottom: 25px;"><strong>「枠を守る人」から、「枠を使いこなして稼ぐ人」へ。</strong></p>
+            <a href="https://note.com/aoi_accounting" class="cta-button">扉を開けて、お待ちしています🌿</a>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 20px;">※URLは仮のものです。実際のnoteのURLに変更してください</p>
+        </div>
 
-        <p style="text-align: center; font-size: 0.9em; color: #666; margin-top: 50px;">
-            <strong class="strong-text">誠実なお約束（必ずお読みください）</strong><br>
-            私は税理士でも社労士でもありません。そのため、以下の点については線を引かせていただいています。<br>
-            ・個別の節税アドバイスや「この仕訳が100%正解」という断定はできません。<br>
-            ・最終的な責任はご自身にあります。だからこそ、「専門家を使いこなすための準備」をここで一緒に行います。<br>
-            ・私は「実務が楽になる目線」で、皆さんが事業に集中できる仕組み作りを全力でサポートします。
-        </p>
+        <footer>
+            <p><strong>誠実なお約束（必ずお読みください）</strong></p>
+            私は税理士でも社労士でもありません。そのため、個別の節税アドバイスや仕訳の確定判断はできませんが、「専門家を使いこなすための準備」を全力でサポートします。最終的な判断はご自身で行っていただく自立型のコミュニティです。
+        </footer>
     </div>
 </body>
 </html>
